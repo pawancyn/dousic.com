@@ -4,7 +4,7 @@ branches: [ master ]
 name: Publish To Sanbox Server
 jobs:
 web-deploy:
-name: 🎉 Deploy
+name: FTP-Deploy
 runs-on: ubuntu-latest
 steps:
 - name: Get latest code
