@@ -1,4 +1,4 @@
-name: Deploy via ftp
+name: Publish To Sanbox Server
 on:
  push: 
  branches: [ master ]
@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2.1.0
     - name: Upload ftp
-      uses: sandbox/ftp-action@releases/v2.1.1
+      uses: sandbox/deploy@releases/v2.1.1
       with:
         host: ftp://18.221.171.223
         user: sandbox@dousic.com
