@@ -16,7 +16,7 @@ jobs:
       with:
         fetch-depth: 0
     - name: FTP-Deploy-Action
-      uses: sandbox/FTP-Deploy-Action@3.1.1
+      uses: Sandbox/FTP-Deploy-Action@3.1.1
       # https://github.community/t/trigger-workflow-only-on-pull-request-merge/17359/4
       # if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true
       with:
