@@ -3,7 +3,6 @@
 name: Publish To Sanbox Server
 
 # Workflow is triggered upon a push to the master branch
-# Should only follow a Pull Request Merge, but will also happen if a dev pushes directly to the master!
 on:
   push:
     branches: [ master ]
@@ -16,9 +15,8 @@ jobs:
       with:
         fetch-depth: 0
     - name: FTP-Deploy-Action
-      uses: Sandbox/FTP-Deploy-Action@3.1.1
-      # https://github.community/t/trigger-workflow-only-on-pull-request-merge/17359/4
-      # if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true
+      uses: SamKirkland/FTP-Deploy-Action@3.1.1
+
       with:
         ftp-server: ftp://18.221.171.223
         ftp-username: sandbox@dousic.com
