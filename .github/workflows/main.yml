@@ -1,7 +1,7 @@
 name: Publish To Sanbox Server
 on:
- push: 
- branches: [ master ]
+  push:
+    branches: [ master ]
 jobs:
   Deploy:
     name: Deploy
