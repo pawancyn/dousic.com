@@ -1,0 +1,16 @@
+**/.git/**
+**/.git-rewrite/**
+**/node_modules/**
+**/nunjucks/**
+**/.vscode/**
+**/.well-known/**
+**/.github/**
+js/
+css/
+t2.html
+*/t2.html
+index.php
+*/index.php
+.gitignore
+README.md
+*/README.md
