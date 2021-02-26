@@ -3,15 +3,15 @@ on:
  push: 
  branches: [ master ]
 jobs:
-  deploy:
+  Deploy:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2.1.0
       with:
         fetch-depth: 0
-    - name: Upload ftp
-      uses: sandbox/deploy@releases/v2.1.1
+    - name: Deploy
+      uses: sandbox/Deploy@releases/v2.1.1
       with:
         host: ftp://18.221.171.223
         user: sandbox@dousic.com
