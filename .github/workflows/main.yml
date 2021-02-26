@@ -1,15 +1,17 @@
-on: push
-name: Deploy Shop 2020
+name: 🚀 Deploy website on push
+on:
+  push:
+    branches: [ master ]
 jobs:
   web-deploy:
-    name: 🚀 Deploy website every commit
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v2.3.2
-
+    
     - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@beta-v4
+      uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
         ftp-server: ftp://18.221.171.223
         ftp-username: sandbox@dousic.com
