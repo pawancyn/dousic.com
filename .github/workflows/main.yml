@@ -1,18 +1,18 @@
 on:
-	push:
-	branches: [ master ]
-	name: Publish To Sanbox Server
-	jobs:
-	  web-deploy:
-		name: 🎉 Deploy
-		runs-on: ubuntu-latest
-		steps:
-		- name: Get latest code
-		  uses: actions/checkout@v2.1.0
-		
-		- name: FTP-Deploy
-		  uses: Sandbox/FTP-Deploy-Action@4.0.0
-		  with:
-			server: ftp://18.221.171.223
-			username: sandbox@dousic.com
-			password: ${{ secrets.SANDBOX_FTP_PASSWORD }}
+push:
+branches: [ master ]
+name: Publish To Sanbox Server
+jobs:
+web-deploy:
+name: 🎉 Deploy
+runs-on: ubuntu-latest
+steps:
+- name: Get latest code
+uses: actions/checkout@v2.1.0
+
+- name: FTP-Deploy
+uses: Sandbox/FTP-Deploy-Action@4.0.0
+with:
+server: ftp://18.221.171.223
+username: sandbox@dousic.com
+password: ${{ secrets.SANDBOX_FTP_PASSWORD }}
