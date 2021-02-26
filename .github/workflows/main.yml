@@ -1,25 +1,16 @@
-# CD GitHub Action to push files to the sandbox.dousic.com server via FTP
-
-name: Publish To Sanbox Server
-
-# Workflow is triggered upon a push to the master branch
-# Should only follow a Pull Request Merge, but will also happen if a dev pushes directly to the master!
+name: Deploy via ftp
 on:
-  push:
-    branches: [ master ]
+	push: 
+	branches: [ master ]
 jobs:
-  FTP-Deploy-Action:
-    name: FTP-Deploy-Action
+  deploy:
+    name: Deploy
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2.1.0
+    - name: Upload ftp
+      uses: sandbox/ftp-action@releases/v2.1.1
       with:
-        fetch-depth: 0
-    - name: FTP-Deploy-Action
-      uses: SamKirkland/FTP-Deploy-Action@3.1.1
-      # https://github.community/t/trigger-workflow-only-on-pull-request-merge/17359/4
-      # if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true
-      with:
-        ftp-server: ftp://18.221.171.223
-        ftp-username: sandbox@dousic.com
-        ftp-password: ${{ secrets.SANDBOX_FTP_PASSWORD }}
+        host: ftp://18.221.171.223
+        user: sandbox@dousic.com
+        password: ${{ secrets.SANDBOX_FTP_PASSWORD }}
