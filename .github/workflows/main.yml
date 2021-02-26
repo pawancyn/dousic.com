@@ -11,7 +11,7 @@ jobs:
       with:
         fetch-depth: 0
     - name: Deploy
-      uses: sandbox/Deploy@releases/v2.1.1
+      uses: SamKirkland/Deploy@releases/v2.1.1
       with:
         host: ftp://18.221.171.223
         user: sandbox@dousic.com
