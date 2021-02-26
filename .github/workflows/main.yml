@@ -1,5 +1,6 @@
-name: Publish To Sanbox Server
+# CD GitHub Action to push files to the sandbox.dousic.com server via FTP
 
+name: Publish To Sanbox Server
 on:
   push:
     branches: [ master ]
@@ -12,8 +13,8 @@ jobs:
       with:
         fetch-depth: 0
     - name: FTP-Action
-      uses: SamKirkland/FTP-Action@releases/v2.1.1
+      uses: SamKirkland/FTP-Action@3.1.1
       with:
-        host: ftp://18.221.171.223
-        user: sandbox@dousic.com
-        password: ${{ secrets.SANDBOX_FTP_PASSWORD }}
+        ftp-server: ftp://18.221.171.223
+        ftp-username: sandbox@dousic.com
+        ftp-password: ${{ secrets.SANDBOX_FTP_PASSWORD }}
