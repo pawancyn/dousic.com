@@ -1,9 +1,6 @@
 # CD GitHub Action to push files to the sandbox.dousic.com server via FTP
 
 name: Publish To Sanbox Server
-
-# Workflow is triggered upon a push to the master branch
-
 on:
   push:
     branches: [ master ]
@@ -19,6 +16,6 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@3.1.1
 
       with:
-        ftp-server: ftp://18.221.171.223
-        ftp-username: sandbox@dousic.com
+        ftp-server: ${{ secrets.SANDBOX_FTP_HOST }}
+        ftp-username: ${{ secrets.SANDBOX_FTP_USERNAME }}
         ftp-password: ${{ secrets.SANDBOX_FTP_PASSWORD }}
